@@ -14,7 +14,7 @@ VOORBEELD:
 
 SELECT *
 FROM person
-WHERE email='" + email "'
+WHERE email='" email "'
 
 Deze query geeft de persoon terug wiens email adres en wachtwoord overeenkomen met het ingevulde
 email adres en wachtwoord (indien deze persoon in de databank bestaat).
@@ -31,6 +31,7 @@ Door 1=1 toe te voegen zal de WHERE conditie altijd waar zijn en wordt er dus ni
 maar meteen alle personen in de databank teruggegeven.
 Stel dat dit gebeurt bij het verwijderen van 1 persoon dan wordt meteen iedereen uit de databank
 verwijdert.
+
 
 OPLOSSING:
 Om er voor te zorgen dat sql injection niet mogelijk is kunnen we gebruik maken

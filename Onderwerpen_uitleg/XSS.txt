@@ -1,6 +1,34 @@
-Wat is het?
+UITLEG:
 
-XSS-aanvallen vinden plaats wanneer client-side code (meestal JavaScript) wordt 'geïnjecteerd' 
-in de uitvoer van uw PHP-script. Dit kan via de URL, maar ook via een opgeslagen techniek zoals 
-de database.
+XSS oftewel Cross Site Scripting is een security issue waarbij een malafide persoon de opbouw van
+een HTML pagina kan manipuleren met als doel het gedrag van de webapplicatie te veranderen.
 
+XSS-aanvallen kunnen plaatsvinden wanneer de client-side code zoals bijvoorbeeld input fomulieren
+worden 'geïnjecteerd' met input die op een andere manier geinterpreteerd zou kunnen worden.
+Wanneer we speciale tekens zoals < > " ' gebruiken is de kans groot dat deze niet als standaard
+input bekeken worden maar mogelijks als stukjes code.
+Door javascript of zelfs html als input te geven kunnen we het gedrag van de webapplicatie wijzigen.
+
+
+
+VOORBEELD:
+
+Stel we hebben een formulier waarin we willekeurige teksten willen bijhouden.
+Wanneer we een simpele zin zoals "Dit is een voorbeeld" ingeven en versturen zal dit geen
+probleem geven.
+Stel dat je voor eender welke geweldige reden je deze zin wilt omkaderen met een <a> en een </a> tag
+en dit verzend, dan zien we dat dat deze tekst meteen een hele andere betekenis krijgt wanneer deze
+getoond word.
+
+Het probleem met deze tweede input is dat deze niet als tekst geïnterpreteerd zal worden maar door
+de tags zal deze als html geïnterpreteerd worden waardoor we een link krijgen.
+
+Zin 1:	Dit is een voorbeeld
+Zin 2: 	Dit is een voorbeeld (underlined en blauw omdat het een link is)
+
+
+OPLOSSING:
+
+Om te voorkomen dat tekst verkeerd geïnterpreteerd wordt, kunnen we in de code expliciet aangeven
+hoe tekst moet geïnterpreteerd worden. Dit voorkomt dat de server en de browser hier vrij spel in
+krijgen en het gedrag van de webapplicatie niet kan wijzigen.
