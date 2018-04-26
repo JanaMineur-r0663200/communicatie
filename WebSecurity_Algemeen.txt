@@ -1,0 +1,22 @@
+Intro
+	- voorstellen als studenten ucll
+	- wat gaan we vertellen
+	- hoe gaan we het aanpakken
+
+Algemeen security
+	- Waarom security toepassen
+	- Waar overal toegepast
+	- Gevolgen van niet toepassen
+
+Security toegepast op php webproject
+	- vragen over webproject leerlingen
+	- security onderwerpen uitleggen adhv demo
+		- SQL injection
+		- XSS
+		- Directory traversal (path injection)
+		- Public files
+		- Password hashing
+		- PHP configuration file
+			- Error reporting
+			- Exposig php version
+
