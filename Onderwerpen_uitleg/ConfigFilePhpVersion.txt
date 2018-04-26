@@ -1,0 +1,24 @@
+UITLEG:
+
+Security issues kunnen overal voorkomen. Het is daarom belangrijk niet alleen je eigen code te
+controleren op issues maar ook de configuratie van de webserver waarop je applicatie draait is
+gevoelig voor issues.
+Vaak bevat de webserver verschillende configuratiebestanden, voor php is dit de php.ini file.
+
+Een mogelijke security issue op de webserver is het beschikbaar stellen van de gebruikte php
+versie.
+Omdat niet alle versies van php identiek dezelfde functionaliteit aanbieden en sommige versies
+ook zwakke punten hebben, is het beter om de php versie van de webserver privé te houden.
+Indien je dit niet doet zal bij elk request voor php de php versie terug te vinde zijn in de
+request header (het informatiedeel van een datapakket).
+Je wilt immers niet tonen dat jij die ene versie gebruikt die net veel security issues bevatte.
+
+
+OPLOSSING:
+
+Een eenvoudige oplossing voor het tonen van de gebruikte php versie is het configuratiebestand
+aanpassen zodat het tonen van de versie uitgeschakeld wordt.
+
+VOORBEELD:
+
+expose_php = off
