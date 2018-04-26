@@ -1,0 +1,44 @@
+UITLEG:
+
+SQL Injection is een security issue waarbij een malafide persoon de SQL queries
+in de code zal manipuleren om zo het doel van de queries te veranderen.
+Door het gebruik van SQL injectie kunnen queries zo aangepast worden dat gevoelige data vrijgegeven wordt alsook
+kan data verwijdert of gewijzigd worden.
+
+Het wijzigen van de SQL query kan mogelijks gebeuren bij input formulieren waarbij de input van een veld de boosdoener is.
+Door in het inputveld kleinere sql queries in te voegen, kan het mogelijk zijn de huidige query uit te breiden en de 
+functionaliteit hiervan aan te passen.
+
+
+VOORBEELD:
+
+SELECT *
+FROM person
+WHERE email='" + email "'
+
+Deze query geeft de persoon terug wiens email adres en wachtwoord overeenkomen met het ingevulde
+email adres en wachtwoord (indien deze persoon in de databank bestaat).
+
+Stel nu dat we geen email adres meegeven maar een stukje SQL in de vorm van 
+	' OR 1=1 OR '1'='1
+dan leest de server bij het verwerken van de code eigenlijk:
+
+SELECT *
+FROM person
+WHERE email= ' ' OR 1=1 OR '1'='1'
+
+Door 1=1 toe te voegen zal de WHERE conditie altijd waar zijn en wordt er dus niet 1 persoon
+maar meteen alle personen in de databank teruggegeven.
+Stel dat dit gebeurt bij het verwijderen van 1 persoon dan wordt meteen iedereen uit de databank
+verwijdert.
+
+OPLOSSING:
+Om er voor te zorgen dat sql injection niet mogelijk is kunnen we gebruik maken
+van prepared statements.
+Bij prepared statements schrijven we een SQL query waarin we werken met parameters.
+De sql query wordt dan verwerkt waardoor de structuur niet meer kan wijzigen.
+Doordat de structuur van de query vastligt zal de input voor de parameters niet geinterpreteerd
+worden als deel van de query.
+Eens de query een keer verwerkt is, hoeven enkel de parameters meegegeven te worden om deze
+uit te voeren.
+
