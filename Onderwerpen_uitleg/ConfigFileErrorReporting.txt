@@ -1,11 +1,30 @@
 UITLEG:
 
-Security issues kunnen van overal komen
+Security issues kunnen overal voorkomen. Het is daarom belangrijk niet alleen je eigen code te
+controleren op issues maar ook de configuratie van de webserver waarop je applicatie draait is
+gevoelig voor issues.
+Vaak bevat de webserver verschillende configuratiebestanden, voor php is dit de php.ini file.
 
+Een mogelijke security issue op de webserver is het aanzetten van errors messages.
+Wanneer er een probleem is zal de gebruiker doorverwezen worden naar een error page.
+Op deze error page wordt vaak een error message weergeven die veel informatie kan geven over
+de werking en de structuur van de code.
+Deze informatie willen we uiteraard zoveel mogelijk afschermen van de buitenwereld zodat deze
+niet in de verkeerde handen kan vallen.
+
+
+OPLOSSING:
+
+Een eenvoudige oplossing voor dit probleem is het configuratiebestand aanpassen zodat
+er geen errors getoond worden aan de client.
+Een alternatief om toch de waardevolle informatie in de errormessages niet verloren te laten
+gaan is om de errors weg te schrijven in de log files.
 
 
 VOORBEELD:
 
+; Disable displaying errors to screen
+display_errors = off
+; Enable writing errors to server logs
+log_errors = on
 
-
-OPLOSSING:
