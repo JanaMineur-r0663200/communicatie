@@ -1,0 +1,21 @@
+CREATE SCHEMA communicatiephp;
+GRANT ALL ON SCHEMA communicatiephp TO r0670805;
+GRANT ALL ON SCHEMA communicatiephp TO r0619834;
+GRANT ALL ON SCHEMA communicatiephp TO r0663200;
+
+SET search_path TO communicatiephp;
+
+CREATE TABLE users
+(
+userid SERIAL NOT NULL,
+firstname VARCHAR(128),
+lastname VARCHAR(128),
+password VARCHAR(128),
+CONSTRAINT userPK PRIMARY KEY (userid)
+);
+
+GRANT ALL ON ALL TABLES IN SCHEMA communicatiephp TO r0670805;
+GRANT ALL ON ALL TABLES IN SCHEMA communicatiephp TO r0619834;
+GRANT ALL ON ALL TABLES IN SCHEMA communicatiephp TO r0663200;
+
+INSERT INTO users (firstname, lastname, password) VALUES ('User1', 'User', 'U');
