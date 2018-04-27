@@ -1,0 +1,52 @@
+UITLEG:
+
+Een mogelijke security issue op de webserver is het beschikbaar stellen van bestanden 
+zoals de eigenlijke code en de nodige configuratiebestanden voor de webserver.
+
+Wanneer je een webservice online zet dan zal je de nodige bestanden ook publiek toegangelijk 
+moeten maken. Vaak is een webproject ook ingedeeld in verschillende mappen waardoor je ook
+de toegang tot de mappen publiek moet maken.
+
+De mogelijke issue ontstaat net bij het publiek maken van mappen. Wanneer je even niet oplet
+kan het zijn dat je meteen alle bestanden in die map publiekelijk op het internet plaatst.
+Indien hier configuratiebestanden bij zitten of andere bestanden met belangrijke gegevens dan
+kan dit wel eens voor problemen zorgen.
+
+OPLOSSING:
+
+Enkele tips om deze fout te voorkomen is door alle bestanden privé te maken en enkel
+de nodige bestanden om te zetten naar publieke bestanden.
+
+Ook kan het handig zijn om configuratiebestanden en andere bestanden die niet bedoelt zijn voor
+het grote publiek af te schermen in een aparte map.
+
+VOORBEELD:
+
+Als default wordt er bij de configuratie van een webserver vaak een hoofdmap gekozen waarin alle
+bestanden van de webapplicatie terecht komen. Soms wordt deze map dan publiek gemaakt waardoor
+ook configuratiebestanden vrij toegangkelijk worden.
+
+root/
+  config/
+    php.ini
+  index.php
+  style.css
+  javascript.js
+  logo.png
+
+Om dit te voorkomen kunnen we submappen aanmaken om de publieke en de private bestanden van
+elkaar te scheiden.
+De publieke folder zal dan enkel de bestanden bevatten die echt nodig zijn.
+De private folder zal dan bestanden zoals configuratiebestanden bevatten.
+
+private/
+  config/
+    php.ini
+  src/
+
+public/
+  index.php
+  style.css
+  javascript.js
+  logo.png
+
