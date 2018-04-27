@@ -9,7 +9,7 @@
 	<?php
 		include 'head.php';
 	?>
-	<title>3 Col Portfolio - Start Bootstrap Template</title>
+	<title>Web Security - Home</title>
 </head>
 
 <body>
@@ -27,8 +27,7 @@
 				<small>- Home</small>
 			</h1>
 
-			<p>Default p tag text</p>
-			<h3>Form</h3>
+			<h3>INSERT</h3>
 			<form action="" method="">
 				<p>
 					<label for="firstname">Firstname</label>
