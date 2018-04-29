@@ -27,14 +27,6 @@
 				<li class="nav-item">
 					<a class="nav-link" href="phpconfigurationfile.php">PHP Configuration File</a>
 				</li>
-<!--
-				<li class="nav-item">
-					<a class="nav-link" href="phpconfigurationfile.php#errorreporting">Error Reporting</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="phpconfigurationfile.php#exposingphpversion">Exposing PHP Version</a>
-				</li>
--->
 			</ul>
 		</div>
 	</div>
