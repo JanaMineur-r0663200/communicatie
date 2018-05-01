@@ -1,5 +1,6 @@
 <?php
 	include 'dbconn.php';
+	$thispage = "test"
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
 	<?php
 		include 'head.php';
 	?>
-	<title>3 Col Portfolio - Start Bootstrap Template</title>
+	<title>Web Security - Test page</title>
 </head>
 
 <body>
@@ -29,25 +30,25 @@
 			
 			<h3>CONTENT</h3>
 			<?php
-				$sql = "SELECT * FROM users";
-				$result = $conn->query($sql);
+			$sql = "SELECT * FROM users";
+			$result = $connection->query($sql);
 
-				if ($result->num_rows > 0) {
-					// output data of each row
-					echo "<table><thead><tr><th>ID</th><th>FIRSTNAME</th><th>LASTNAME</th><th>PASSWORD</th></tr></thead><tbody>";
-					while($row = $result->fetch_assoc()) {
-						echo "<tr><td>" . $row["id"]. " </td><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td><td>" . $row["password"]. "</td></tr>";
-					}
-					echo "</tbody></table>";
-				} else {
-					echo "0 results";
+			if ($result->num_rows > 0) {
+				// output data of each row
+				echo "<table><thead><tr><th>ID</th><th>FIRSTNAME</th><th>LASTNAME</th><th>PASSWORD</th></tr></thead><tbody>";
+				while($row = $result->fetch_assoc()) {
+					echo "<tr><td>" . $row["id"]. " </td><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td><td>" . $row["password"]. "</td></tr>";
 				}
+				echo "</tbody></table>";
+			} else {
+				echo "0 results";
+			}
 			?>
 		
 			<!--INSERT-->
 			<h3>INSERT</h3>
-			<form action="handlers/test_user_insert.php" method="POST">
-				<input type="hidden" name="redirectpage" value="test.php"/>
+			<form action="test/insert_user.php" method="POST">
+				<input type="hidden" name="redirectpage" value="<?php echo $thispage; ?>.php"/>
 				<p>
 					<label for="firstname">Firstname</label>
 					<input type="text" id="firstname" name="firstname" required/>
@@ -62,12 +63,17 @@
 				</p>
 				<input type="submit" value="ADD"/>
 			</form>
-			<p>voornaam', (SELECT version()), 'wachtwoord')-- </p>
+			<p class="code">voornaam', (SELECT version()), 'wachtwoord')-- </p>
+			<p class="code">
+				<?php
+				show_source("test/insert_user.php");
+				?>
+			</p>
 			
 			<!--UPDATE-->
 			<h3>UPDATE</h3>
-			<form action="handlers/test_user_update.php" method="POST">
-				<input type="hidden" name="redirectpage" value="test.php"/>
+			<form action="test/update_user.php" method="POST">
+				<input type="hidden" name="redirectpage" value="<?php echo $thispage; ?>.php"/>
 				<p>
 					<label for="id">Id</label>
 					<input type="text" id="id" name="id" required/>
@@ -86,6 +92,12 @@
 				</p>
 				<input type="submit" value="UPDATE"/>
 			</form>
+
+			<p class="code">
+				<?php
+				highlight_file("test/update_user.php");
+				?>
+			</p>
 			
 			<!--SEARCH-->
 			<h3>SEARCH</h3>
@@ -96,7 +108,8 @@
 				</p>
 				<input type="submit" value="SEARCH"/>
 			</form>
-			<p>' OR 1=1 OR '1'='1</p>
+			<p class="code">' OR 1=1 OR '1'='1</p>
+			
 			<?php
 			if ($_SERVER["REQUEST_METHOD"] == "GET") {	
 				if (!empty($_GET["firstname"])){
@@ -104,7 +117,7 @@
 			
 					$sql = "SELECT id, firstname, lastname, password FROM users WHERE firstname = '" . $firstname . "';";
 
-					$result = $conn->query($sql);
+					$result = $connection->query($sql);
 
 					if ($result->num_rows > 0) {
 						// output data of each row
@@ -119,6 +132,13 @@
 				}
 			}
 			?>
+			
+			<p class="code">
+				<?php
+				highlight_file("test/select_user.php");
+				?>
+			</p>
+
 		</div>
 	</main>
 	<!-- /.container -->

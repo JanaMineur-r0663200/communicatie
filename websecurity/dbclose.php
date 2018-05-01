@@ -4,5 +4,5 @@
 //pg_close($dbconn);
 
 //CLOSE MYSQLI
-$conn->close();
+$connection->close();
 ?>

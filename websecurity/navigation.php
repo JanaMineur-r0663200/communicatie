@@ -10,6 +10,9 @@
 					<a class="nav-link" href="index.php">Home</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="test.php">Test page</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="sqlinjection.php">SQL Injection</a>
 				</li>
 				<li class="nav-item">

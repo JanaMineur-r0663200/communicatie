@@ -9,10 +9,10 @@ $username = "root"; //Usually: "root"
 $password = ""; //Default is empty with Xampp
 $dbname = "communicatiephp"; //Database name
 
-$conn = new mysqli($servername, $username, $password, $dbname); //Create connection
+$connection = new mysqli($servername, $username, $password, $dbname); //Create connection
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
 }
 
 ?>
