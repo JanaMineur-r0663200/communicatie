@@ -1,0 +1,24 @@
+Wat is security?
+
+Anno 2018 is het internet niet meer weg te denken uit ons dagelijkse leven. Computers, smartphones, spelconsoles zelfs de
+koelkast en de centrale verwarming, alles is tegenwoordig verbonden met het internet.
+
+Het internet zelf is een medium waarlangs alle devices en hun gebruikers met elkaar kunnen
+communiceren.
+De oorspronkelijke bedoeling van het internet was om documenten en andere data openbaar
+beschikbaar te stellen voor iedereen. 
+Natuurlijk is het vanzelfsprekend dat je je persoonlijke bestanden niet zomaar openbaar op het 
+internet wilt zien staan. Je wilt evenmin dat iemand anders de verwarming bij jou thuis zou kunnen regelen.
+
+Omdat sommige zaken nu eenmaal niet voor het grote publiek bedoelt zijn willen we deze graag
+afschermen en dat is waar security komt kijken.
+Met security gaan we er voor zorgen dat alleen jijzelf en de mensen die jij kiest, toegang
+hebben tot de gegevens.
+
+Gegevens afschermen klinkt soms eenvoudig, we zetten een wachtwoord op de gegevens en klaar.
+In praktijk is het spijtig genoeg niet zo eenvoudig, zo moet je rekening houden met de wijze
+waarop wachtwoorden verzonden worden, of wachtwoorden wel wachtwoorden zijn, hoe je wachtwoorden
+gaat bewaren en nog vele meer.
+
+Als volgende vertellen we jullie meer over enkele security onderwerpen waar je zeker op moet letten bij het
+maken van een webapplicatie in php.
