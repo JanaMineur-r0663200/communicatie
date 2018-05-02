@@ -25,26 +25,14 @@
 
 			<!-- Page Heading -->
 			<h1 class="my-4">Web Security
-				<small>- Home</small>
+				<small>- Test page</small>
 			</h1>
-			
+
 			<h3>CONTENT</h3>
 			<?php
-			$sql = "SELECT * FROM users";
-			$result = $connection->query($sql);
-
-			if ($result->num_rows > 0) {
-				// output data of each row
-				echo "<table><thead><tr><th>ID</th><th>FIRSTNAME</th><th>LASTNAME</th><th>PASSWORD</th></tr></thead><tbody>";
-				while($row = $result->fetch_assoc()) {
-					echo "<tr><td>" . $row["id"]. " </td><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td><td>" . $row["password"]. "</td></tr>";
-				}
-				echo "</tbody></table>";
-			} else {
-				echo "0 results";
-			}
+				include 'selectall_user.php';
 			?>
-		
+
 			<!--INSERT-->
 			<h3>INSERT</h3>
 			<form action="test/insert_user.php" method="POST">
@@ -59,17 +47,22 @@
 				</p>
 				<p>
 					<label for="password">Password</label>
-					<input type="password" id="password" name="password" required/>
+					<input type="text" id="password" name="password" required/>
 				</p>
 				<input type="submit" value="ADD"/>
 			</form>
+			<h4>XSS</h4>
+			<p class="code">&lt;script&gt;alert("hacked")&lt;/script&gt;</p>
+            <!-- <script>alert("hacked")</script> -->
+			<h4>SQL Injection</h4>
 			<p class="code">voornaam', (SELECT version()), 'wachtwoord')-- </p>
+            <h4>test/insert_user.php</h4>
 			<p class="code">
 				<?php
-				show_source("test/insert_user.php");
+				highlight_file("test/insert_user.php");
 				?>
 			</p>
-			
+
 			<!--UPDATE-->
 			<h3>UPDATE</h3>
 			<form action="test/update_user.php" method="POST">
@@ -88,7 +81,7 @@
 				</p>
 				<p>
 					<label for="password">Password</label>
-					<input type="password" id="password" name="password" required/>
+					<input type="text" id="password" name="password" required/>
 				</p>
 				<input type="submit" value="UPDATE"/>
 			</form>
@@ -98,10 +91,10 @@
 				highlight_file("test/update_user.php");
 				?>
 			</p>
-			
+
 			<!--SEARCH-->
-			<h3>SEARCH</h3>
-			<form action="test.php" method="GET">
+			<h3 id="search">SEARCH</h3>
+			<form action="test.php#search" method="GET">
 				<p>
 					<label for="firstname">Firstname</label>
 					<input type="text" id="firstname" name="firstname" required/>
@@ -109,30 +102,11 @@
 				<input type="submit" value="SEARCH"/>
 			</form>
 			<p class="code">' OR 1=1 OR '1'='1</p>
-			
+
 			<?php
-			if ($_SERVER["REQUEST_METHOD"] == "GET") {	
-				if (!empty($_GET["firstname"])){
-					$firstname = $_GET["firstname"];
-			
-					$sql = "SELECT id, firstname, lastname, password FROM users WHERE firstname = '" . $firstname . "';";
-
-					$result = $connection->query($sql);
-
-					if ($result->num_rows > 0) {
-						// output data of each row
-						echo "<table><thead><tr><th>ID</th><th>FIRSTNAME</th><th>LASTNAME</th><th>PASSWORD</th></tr></thead><tbody>";
-						while($row = $result->fetch_assoc()) {
-							echo "<tr><td>" . $row["id"]. " </td><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td><td>" . $row["password"]. "</td></tr>";
-						}
-						echo "</tbody></table>";
-					} else {
-						echo "0 results";
-					}
-				}
-			}
+			include 'test/select_user.php';
 			?>
-			
+
 			<p class="code">
 				<?php
 				highlight_file("test/select_user.php");
@@ -145,9 +119,9 @@
 
 	<!-- Footer -->
 	<?php
-		include 'footer.php';
-	?>	
-	
+	include 'footer.php';
+	?>
+
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

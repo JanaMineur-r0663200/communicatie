@@ -29,22 +29,10 @@
 			</h1>
 
 			<h3>CONTENT</h3>
-			<?php
-			$sql = "SELECT * FROM users";
-			$result = $connection->query($sql);
-
-			if ($result->num_rows > 0) {
-				// output data of each row
-				echo "<table><thead><tr><th>ID</th><th>FIRSTNAME</th><th>LASTNAME</th><th>PASSWORD</th></tr></thead><tbody>";
-				while($row = $result->fetch_assoc()) {
-					echo "<tr><td>" . $row["id"]. " </td><td>" . $row["firstname"]. "</td><td>" . $row["lastname"]. "</td><td>" . $row["password"]. "</td></tr>";
-				}
-				echo "</tbody></table>";
-			} else {
-				echo "0 results";
-			}
+            <?php
+			include 'selectall_user.php';
 			?>
-		
+
 			<!--INSERT-->
 			<h3>INSERT</h3>
 			<form action="xss/insert_user.php" method="POST">
@@ -65,9 +53,10 @@
 			</form>
             <p class="code">&lt;script&gt;alert("hacked")&lt;/script&gt;</p>
             <!-- <script>alert("hacked")</script> -->
-			<p class="code">
+            <h4>xss/insert_user.php</h4>
+            <p class="code">
 				<?php
-				show_source("xss/insert_user.php");
+				highlight_file("xss/insert_user.php");
 				?>
 			</p>
 
@@ -78,8 +67,8 @@
 	<!-- Footer -->
 	<?php
 		include 'footer.php';
-	?>	
-	
+	?>
+
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -1,6 +1,6 @@
 <?php
  include 'dbconn.php';
- $thispage = "xss"
+ $thispage = "directorytraversal"
 ?>
 
 <!DOCTYPE html>
@@ -34,29 +34,29 @@
 			<h4>index.php</h4>
 			<p class="code">
 				<?php
-				show_source("directorytraversal/disabled/index.php");
+				highlight_file("directorytraversal/disabled/index.php");
 				?>
 			</p>
 			<h4>page1.php</h4>
 			<p class="code">
 				<?php
-				show_source("directorytraversal/disabled/page1.php");
+				highlight_file("directorytraversal/disabled/page1.php");
 				?>
 			</p>
 
             <h3>Directory traversal met beveiliging (enabled)</h3>
             <a href="directorytraversal/enabled/">Voorbeeld met beveiliging</a>
-			
+
 			<h4>index.php</h4>
 			<p class="code">
 				<?php
-				show_source("directorytraversal/enabled/index.php");
+				highlight_file("directorytraversal/enabled/index.php");
 				?>
 			</p>
 			<h4>page1.php</h4>
 			<p class="code">
 				<?php
-				show_source("directorytraversal/enabled/page1.php");
+				highlight_file("directorytraversal/enabled/page1.php");
 				?>
 			</p>
 
@@ -67,8 +67,8 @@
 	<!-- Footer -->
 	<?php
 		include 'footer.php';
-	?>	
-	
+	?>
+
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

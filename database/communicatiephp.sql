@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 27 apr 2018 om 20:02
+-- Gegenereerd op: 02 mei 2018 om 23:47
 -- Serverversie: 10.1.31-MariaDB
 -- PHP-versie: 7.2.3
 
@@ -32,17 +32,9 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `firstname` varchar(128) NOT NULL,
   `lastname` varchar(128) NOT NULL,
-  `password` varchar(128) NOT NULL
+  `password` varchar(128) NOT NULL,
+  `passwordhashed` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Gegevens worden geëxporteerd voor tabel `users`
---
-
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `password`) VALUES
-(1, 'User1', 'Users', 'U'),
-(2, 'Matthias', 'Van Meerbeek', 'test'),
-(3, 'Lorenz', 'Borgions', 'pass');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -63,7 +55,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

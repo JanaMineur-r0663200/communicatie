@@ -13,22 +13,19 @@
 					<a class="nav-link" href="test.php">Test page</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="sqlinjection.php">SQL Injection</a>
-				</li>
-				<li class="nav-item">
 					<a class="nav-link" href="xss.php">XSS</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="directorytraversal.php">Directory Traversal</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="publicfiles.php">Public files</a>
+					<a class="nav-link" href="sqlinjection.php">SQL Injection</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="passwordhashing.php">Password hashing</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="phpconfigurationfile.php">PHP Configuration File</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="directorytraversal.php">Directory Traversal</a>
 				</li>
 			</ul>
 		</div>
